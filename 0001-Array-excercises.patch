@@ -1,0 +1,231 @@
+From aeaaddea343cb1e2e519ea4a0ee6485fa35c0ce4 Mon Sep 17 00:00:00 2001
+From: Moses <loschnigsolutions@gmail.com>
+Date: Thu, 3 Sep 2020 19:35:06 +0530
+Subject: [PATCH] Array excercises
+
+
+diff --git a/arrays/array1.c b/arrays/array1.c
+index 7dad3d6..212d7c1 100644
+--- a/arrays/array1.c
++++ b/arrays/array1.c
+@@ -9,10 +9,10 @@ void main()
+ 	printf("enter array elements:\n");
+ 	
+ 	while (i < 10)
+-	  {
++	{
+   		scanf("%d",&a[i]);
+ 		i++;
+-	  }
++	}
+ 	
+ 	i = 0;
+  	
+diff --git a/arrays/array2.c b/arrays/array2.c
+index a816e5a..48f7027 100644
+--- a/arrays/array2.c
++++ b/arrays/array2.c
+@@ -4,28 +4,38 @@ void main()
+ 
+ {
+ 	int a[10];
++	int flag = 0;
+ 	int i = 1;
+ 	int b;
+ 	int j = 1;
+ 
+ 	printf("enter array elements:\n");
+-	
++
+ 	while(i < 10)
+-	  {
+-		  scanf("%d",&a[i]);
+-		  i++;
+-	  }
++	{
++		scanf("%d",&a[i]);
++		i++;
++	}
+ 
+ 	printf("enter a number:");
+ 	scanf("%d",&b);
+ 
+-	i = 0;
++	j = 0;
+ 	while(j < 10)
+-	  {
+-	    if( a[j] == b)
+-    		    printf("element found at index-%d\n",j);
+-	    else
+-	            printf("element not found in index-%d\n",j);
+-            j++;           	    
+-	  }
++	{
++		if( a[j] == b)
++		{
++			printf("element found at index-%d\n",j);
++			flag = 1;
++			break;
++		}
++
++		printf("%d\n", j);
++		j++;
++	}
++
++	if (flag == 0)
++	{
++		printf("element not found in index-%d\n",j);
++	}
+ }
+diff --git a/arrays/array4.c b/arrays/array4.c
+index 2a3f426..b08d7ad 100644
+--- a/arrays/array4.c
++++ b/arrays/array4.c
+@@ -1,26 +1,31 @@
+ #include<stdio.h>
+ void main()
+-	
++
+ {
+-	
++
+ 	int a[10];
+ 	int b[10];
+ 	int i = 0;
+-	
++
+ 	printf("enter array elements:\n");
+ 
+ 	while( i < 10)
+ 	{
+-	   scanf("%d",&a[i]);
+-	   i++;
++		scanf("%d",&a[i]);
++		i++;
+ 	}
+-	
+-        i = 0;
++
++	i = 0;
+ 
+ 	while(i < 10)
+ 	{	
+-	   b[i] = a[9 - i];
+-	   printf("b[%d] = %d\n",i,b[i]);
+-	   i++;
++		b[i] = a[9 - i];
++		i++;
++	}
++
++	i = 0;
++	while (i < 10)
++	{
++		printf("b[%d] = %d\n",i,b[i]);
+ 	}
+ }
+diff --git a/arrays/array5.c b/arrays/array5.c
+index ce913a0..ac67aed 100644
+--- a/arrays/array5.c
++++ b/arrays/array5.c
+@@ -7,47 +7,48 @@ void main()
+ 	int c[10];
+ 	int i = 0;
+ 	int j = 0;
+-	
++
+ 	printf("enter elements in array 1:\n");
+-	
++
+ 	while(i < 5)
+ 	{
+-	  scanf("%d",&a[i]);
+-	  i++;
++		scanf("%d",&a[i]);
++		i++;
+ 	}
+-	
++
+ 	i = 0;
+ 
+ 	printf("enter elements in array 2:\n");
+ 
+ 	while(i < 5)
+ 	{
+-  	  scanf("%d",&b[i]);
+-	  i++;
++		scanf("%d",&b[i]);
++		i++;
+ 	}
+ 
+ 	printf("elements in array 3 are:\n");
+-	
++
++	while(j < 5)
++	{
++		c[j] = a[4-j];
++		j++;
++	}
++
++	j = 0;
++
+ 	while(j < 5)
+-	 {	   
+-	      c[j] = a[4-j];
+-	      j++;
+-	 }
+-		
+-	 j = 0;
+-	 
+-	 while(j < 5)   
+-            {
+-	      c[j+5] = b[4-j];
+-	      j++;
+-	    }
++	{
++		c[j+5] = b[4-j];
++		j++;
++	}
+ 
+ 	i = 0;
+-	  while(i < 10)
+-	  {		  
+- 	 	  printf("%d-",c[i]);
+-		  i++;
+- 	  } 
++	while(i < 10)
++	{
++		printf("%d-",c[i]);
++		i++;
++	}
++	printf("\n");
+ }
+-	  
++
+ 
+diff --git a/arrays/array6.c b/arrays/array6.c
+index 65875bb..cc69459 100644
+--- a/arrays/array6.c
++++ b/arrays/array6.c
+@@ -18,14 +18,14 @@ void main()
+ 	while(i < 10)
+ 	{ 
+ 		if(a[i]%2 == 0)
+-		 {
+-		   count++;
+-		 }
+-	  i++;
++		{
++			count++;
++		}
++		i++;
+ 	}
+ 
+ 	printf("Array has %d even numbers",count);
+ 
+ }
+ 
+-	
++
+-- 
+2.25.1
+
