@@ -1,0 +1,547 @@
+From 65722020d4b5fe1f2e2d7cf87130779cfc5b81d9 Mon Sep 17 00:00:00 2001
+From: Moses <loschnigsolutions@gmail.com>
+Date: Sun, 6 Sep 2020 15:54:50 +0530
+Subject: [PATCH 1/2] if fixes
+
+
+diff --git a/if/if1.c b/if/if1.c
+index e12357a..5376153 100644
+--- a/if/if1.c
++++ b/if/if1.c
+@@ -17,15 +17,15 @@ void main()
+ 
+     if(a>b && a>c)
+     {   
+-	   printf("value of a is greater than b\n");
++	   printf("value of a is greater than b & c\n");
+     }	
+     if(b>c && b>a)
+     { 
+-	   printf("Value of b is greater than c\n");
++	   printf("Value of b is greater than c & a\n");
+     }
+     if(c>a && c>b)
+     { 
+-	    printf("Value of c greater than a\n ");
++	    printf("Value of c greater than a & b\n ");
+     }    
+ 
+ 
+diff --git a/if/if2.c b/if/if2.c
+index 2e57a9b..2215c8b 100644
+--- a/if/if2.c
++++ b/if/if2.c
+@@ -4,21 +4,21 @@
+ 
+ #include<stdio.h>
+ 
+-int a;
+ 
+ 
+ void main()
+-
+ {
+-
+-   printf("Enter value of a:\n");
+-   scanf("%d", &a);   
+-     if(a%2==0)
+-     {
+- 	      printf("Value of given no is Even\n");
+-     } 
+-     else 
+-     {
+-            printf("Value of given no is Odd\n");	
+-     } 	    
++	int a;
++
++	printf("Enter value of a:\n");
++	scanf("%d", &a);
++
++	if(a%2==0)
++	{
++		printf("Value of given no is Even\n");
++	}
++	else
++	{
++		printf("Value of given no is Odd\n");
++	}
+ }
+diff --git a/if/if3.c b/if/if3.c
+index 83d3d13..d08c31f 100644
+--- a/if/if3.c
++++ b/if/if3.c
+@@ -1,33 +1,29 @@
+ 
+-
+-
+ #include<stdio.h>
+ 
+-int a,b,c;
+-
+ void main()
+-
+ {
++	int a,b,c;
+ 
+-     printf("Enter value of a:\n");
+-     scanf("%d",&a);
+-     printf("Enter value of b:\n");
+-     scanf("%d",&b);
+-     printf("Enter value of c:\n");
+-     scanf("%d",&c);
++	printf("Enter value of a:\n");
++	scanf("%d",&a);
++	printf("Enter value of b:\n");
++	scanf("%d",&b);
++	printf("Enter value of c:\n");
++	scanf("%d",&c);
+ 
+-        if(a==b && b==c)
+-        {
+-	   printf("This is Equilateral triangle\n"); //all sides are equal
++	if(a==b && b==c)
++	{
++		printf("This is Equilateral triangle\n"); //all sides are equal
+ 
+-        }
++	}
+ 	else if(a==b || a==c|| b==a)
+-        {
+-           printf("This is isoceles triangle\n"); // any two sides are equal
+-        }
+-        else
+-        {
+-	   printf("This is scalene triangle\n");   //no two sides are equal
+-        }
++	{
++		printf("This is isoceles triangle\n"); // any two sides are equal
++	}
++	else
++	{
++		printf("This is scalene triangle\n");   //no two sides are equal
++	}
+ 
+ }
+diff --git a/if/if4.c b/if/if4.c
+index a3cc38c..7409892 100644
+--- a/if/if4.c
++++ b/if/if4.c
+@@ -1,19 +1,19 @@
+ 
+-
+-
+ #include<stdio.h>
+ 
+ void main()
+ {
+ 	char a;
++
+ 	printf("Enter char a as:\n ");
+-        scanf("%c",&a);
+-        if(a=='a' || a=='e' || a=='i' || a=='o' || a=='u')
++	scanf("%c",&a);
++
++	if(a=='a' || a=='e' || a=='i' || a=='o' || a=='u')
++	{
++		printf("given char is Vowel\n");
++	}
++	else
+ 	{
+-	     printf("given char is Vowel\n");
++		printf("Char is consonant\n");
+ 	}
+-        else	
+-       {
+-	     printf("Char is consonant\n");
+-       }
+ }	
+diff --git a/if/if5.c b/if/if5.c
+index 70d4a81..e0ba4fd 100644
+--- a/if/if5.c
++++ b/if/if5.c
+@@ -1,39 +1,39 @@
+ 
+-
+-
+-
+ #include<stdio.h>
++
+ void main()
+ {
+ 
+-int a,b,c;
+- 	printf("Enter the value of a: \n");
+- 	scanf("%d",&a);
++	int a,b,c;
++
++	printf("Enter the value of a: \n");
++	scanf("%d",&a);
+ 	printf("Enter the value of b:\n");
+ 	scanf("%d",&b);
+-   	printf("Enter the value of c:\n");
++	printf("Enter the value of c:\n");
+ 	scanf("%d",&c);
++
+ 	if((a+b)>c)
+ 	{ 	
+-	    if((b+c)>a)
+-	{
+-		if((c+a)>b)
+-	{
+-		printf("Triangle  is valid \n"); 
+-
+-	}    		
+-	else
+-	{	
+-		printf("Traingle is invalid \n");
+-	}
+-	}
+-	else	
+-	{	
+-		printf("Triangle is invalid \n");
+-	}
++		if((b+c)>a)
++		{
++			if((c+a)>b)
++			{
++				printf("Triangle  is valid \n");
++
++			}
++			else
++			{
++				printf("Traingle is invalid \n");
++			}
++		}
++		else
++		{
++			printf("Triangle is invalid \n");
++		}
+ 	}
+ 	else
+-	{	
++	{
+ 		printf("Traingle is invalid \n");
+ 	}
+ 
+diff --git a/if/if6.c b/if/if6.c
+index 37d2134..761458f 100644
+--- a/if/if6.c
++++ b/if/if6.c
+@@ -1,14 +1,13 @@
+ 
+-
+-
+-
+ #include<stdio.h>
+ 
+ void main()
+ {
+-int month;
++	int month;
++
+ 	printf("Enter the month number 1 to 12 \n");
+ 	scanf("%d",&month);
++
+ 	if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==11)
+ 	{
+ 		printf("31 days in this month\n");
+@@ -27,4 +26,4 @@ int month;
+ 	}
+ }
+ 
+-		
++
+diff --git a/if/if7.c b/if/if7.c
+index 3ceac6e..8d161ed 100644
+--- a/if/if7.c
++++ b/if/if7.c
+@@ -1,25 +1,34 @@
+ 
+-
+-
+-
+ #include<stdio.h>
+ 
+ void main()
+ {
+-int cusid;
+-float units ,charges;
++	int cusid;
++	float units ,charges;
++
+ 	printf("Enter the customerid :\n");
+ 	scanf("%d",&cusid);
++
+ 	printf("Enter no of units :\n");
+ 	scanf("%f",&units);
++
+ 	if(units<=50)
++	{
+ 		charges=0.50*units;		
++	}/* change > to < */
+ 	else if(units>=100)
++	{
+ 		charges=0.75*units;
++	}
+ 	else if(units<=250)
+-	       charges=1.20*units;
+-	else(units>250);
++	{
++		charges=1.20*units;
++	}
++	else if (units>250)
++	{
+ 		charges=1.50*units;	
+-		printf("The amount that generated for the bill payent is : %f\n",charges);
+-		
++	}
++
++	printf("The amount that generated for the bill payent is : %f\n",charges);
++
+ }		
+diff --git a/if/if8.c b/if/if8.c
+index 80ff1d5..c5118c5 100644
+--- a/if/if8.c
++++ b/if/if8.c
+@@ -1,23 +1,19 @@
+ 
+-
+-
+-
+-
+ #include<stdio.h>
+ 
+-int n;
+-
+ void main()
+-
+ {
+-  printf("Enter age of person n:\n");
+-  scanf("%d",&n);
+-      if(n>18)
+-          {
+-            printf("You are eligible to vote \n");
+-          } 
+-       else
+-          {
+-            printf("You cannot access the Right to Vote\n");
+-          }  
++	int n;
++
++	printf("Enter age of person n:\n");
++	scanf("%d",&n);
++
++	if(n>18)
++	{
++		printf("You are eligible to vote \n");
++	}
++	else
++	{
++		printf("You cannot access the Right to Vote\n");
++	}
+ }
+-- 
+2.25.1
+
+
+From d317a132c93c8353b44ea4cf3bb0e5a0d7bf4ea6 Mon Sep 17 00:00:00 2001
+From: Moses <loschnigsolutions@gmail.com>
+Date: Sun, 6 Sep 2020 16:06:08 +0530
+Subject: [PATCH 2/2] sw3 fixes
+
+
+diff --git a/switch/sw1.c b/switch/sw1.c
+index 6c79434..01e5de1 100644
+--- a/switch/sw1.c
++++ b/switch/sw1.c
+@@ -1,30 +1,30 @@
+ 
+-
+-
+ #include<stdio.h>
+ 
+ void main()
+-
+ {
+-int n;	
+-int year;
++	int n;	
++	int year;
++
+ 	printf("Enter value of n\n");
+ 	scanf("%d",&n);
++
+ 	printf("Enter the value of year:\n");
+ 	scanf("%d",&year);
++
+ 	switch(n)
+ 	{	
+-	case 0: 	
+-		year % 4 == 0;
+-		printf("The year is leap year:\n");
+-		break;		
+-       case 1:
+-		year % 100 == 0;
+-		printf("The year is not a leap year:\n");
+-		break;
++		case 0: 	
++			year % 4 == 0;
++			printf("The year is leap year:\n");
++			break;		
++		case 1:
++			year % 100 == 0;
++			printf("The year is not a leap year:\n");
++			break;
+ 	}	
+-		        
++
+ }		
+-		
++
+ 
+ 
+diff --git a/switch/sw2.c b/switch/sw2.c
+index c718d61..9b0e8b2 100644
+--- a/switch/sw2.c
++++ b/switch/sw2.c
+@@ -1,45 +1,42 @@
+ 
+-
+-
+-
+ #include<stdio.h>
+ 
+-int a,b,c;
+-int n;
+-
+ void main()
+-
+ {
+-
+-    printf("Enter value of a\n");
+-    printf("Enter value of b\n");
+-    scanf("%d", &a);
+-    scanf("%d", &b);
+-    printf("\n 1:Addition of two num\n");
+-    printf("\n 2:Subtraction of two num\n");
+-    printf("\n 3:Multiplication of two num\n");
+-    printf("\n 4:Division of two num\n");
+-    scanf("%d", &n);
+-    switch(n)
+-    {
+-        case 1:
+-               c=a+b;
+-	       printf("\n Add of two num=%d",c);
+-	       break;
+-	case 2:
+-	       c=a-b;
+-	       printf("\n Sub of two num=%d",c);
+-	       break;
+-	case 3:
+-	       c=a*b;
+-	       printf("\n Mul of two num=%d",c);
+-	       break;
+-	case 4: 
+-	       c=a/b;
+-	       printf("\n Div of two num=%d",c);
+-	       break;
+-     	default:
+-           printf("Thanks for your service\n");
+-	   break;
+-     }
++	int a,b,c;
++	int n;
++
++	printf("Enter value of a\n");
++	printf("Enter value of b\n");
++	scanf("%d", &a);
++	scanf("%d", &b);
++
++	printf("\n 1:Addition of two num\n");
++	printf("\n 2:Subtraction of two num\n");
++	printf("\n 3:Multiplication of two num\n");
++	printf("\n 4:Division of two num\n");
++	scanf("%d", &n);
++
++	switch(n)
++	{
++		case 1:
++			c=a+b;
++			printf("\n Add of two num=%d",c);
++			break;
++		case 2:
++			c=a-b;
++			printf("\n Sub of two num=%d",c);
++			break;
++		case 3:
++			c=a*b;
++			printf("\n Mul of two num=%d",c);
++			break;
++		case 4:
++			c=a/b;
++			printf("\n Div of two num=%d",c);
++			break;
++		default:
++			printf("Thanks for your service\n");
++			break;
++	}
+ }
+diff --git a/switch/sw3.c b/switch/sw3.c
+index 5056855..6c893f5 100644
+--- a/switch/sw3.c
++++ b/switch/sw3.c
+@@ -1,30 +1,32 @@
+ 
+-
+-
+-
+ #include<stdio.h>
+ 
+ void main()
+ {
+-int Id,password;
+-int n;
++	int Id,password;
++
+ 	printf("Enter value of Id:\n");
+ 	scanf("%d",&Id);
+-	printf("Enter value of password:\n");
+-	scanf("%d",&password);
+-	printf("Enter value of n:\n");
+-	scanf("%d",&n);
+-	switch(n)
++
++	switch(Id)
+ 	{
+-	case 0:
+-		printf("Your are allowed inside the room\n");
+-		break;
+-	case 1:
+-		printf("You entered wrong password you are not allowed\n");
+-		break;
+-	default:
+-		printf("Please enter the correct Id and password\n");
+-		break;	
++		case 165:
++			printf("Enter value of password:\n");
++			scanf("%d",&password);
++			switch (password)
++			{
++				case 103842:
++					printf("Door unlocked\n");
++					break;
++
++				default:
++					printf("Sorry Password Incorrect\n");
++			}
++
++			break;
++
++		default:
++			printf("Please enter the correct Id\n");
+ 	}
+ 
+ }	
+-- 
+2.25.1
+
