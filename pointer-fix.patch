@@ -1,0 +1,47 @@
+From 0118185600a7d8f7253ddd72e5b66ee0f3b44edc Mon Sep 17 00:00:00 2001
+From: Moses <loschnigsolutions@gmail.com>
+Date: Thu, 10 Sep 2020 14:10:40 +0530
+Subject: [PATCH] Pointer -2 Correction
+
+
+diff --git a/pointers/pointer2.c b/pointers/pointer2.c
+index bd30379..acca7a2 100644
+--- a/pointers/pointer2.c
++++ b/pointers/pointer2.c
+@@ -12,6 +12,7 @@ void main()
+ 	scanf("%d", p);
+ 	scanf("%d", q);
+ 
++	/* Use *p & *q */
+ 	if(a<b)
+ 	{
+ 		printf("b is greater");
+diff --git a/pointers/pointer4.c b/pointers/pointer4.c
+index b9f8cfb..b353c54 100644
+--- a/pointers/pointer4.c
++++ b/pointers/pointer4.c
+@@ -2,7 +2,7 @@
+ void main()
+ 
+ {
+-	int a[9];
++	int a[10];
+ 	int *p;
+ 	int i = 0;
+ 
+diff --git a/pointers/pointer6.c b/pointers/pointer6.c
+index 3ab0b8b..37b761a 100644
+--- a/pointers/pointer6.c
++++ b/pointers/pointer6.c
+@@ -3,7 +3,7 @@
+ void main()
+ 
+ {
+-	int a[9];
++	int a[10];
+ 	int *p;
+ 	int b = 0;
+ 
+-- 
+2.25.1
+
