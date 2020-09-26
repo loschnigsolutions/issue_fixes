@@ -1,0 +1,231 @@
+From 2e72908d6d48cf27790e50f53ef6738442b39931 Mon Sep 17 00:00:00 2001
+From: Moses <loschnigsolutions@gmail.com>
+Date: Sat, 26 Sep 2020 12:31:10 +0530
+Subject: [PATCH] Arrays fixes
+
+
+diff --git a/array/arr1.c b/array/arr1.c
+index a7cf814..28523f1 100644
+--- a/array/arr1.c
++++ b/array/arr1.c
+@@ -1,14 +1,14 @@
+ #include<stdio.h>
+-`
++
+ void main()
+ {
+-	int a[6]={10,30,25,45,70};
++	int a[5]={10,30,25,45,70};
+ 	int sum =0;
+ 	int i=0;
+-	while(i<6)
+-		{
+-			sum=sum+a[i];
+-			i++;
+-		}
++	while(i<5)
++	{
++		sum=sum+a[i];
++		i++;
++	}
+ 	printf("\nSum of elements in array=%d\n",sum);
+ }
+diff --git a/array/arr5.c b/array/arr5.c
+index b37c2be..2c484c1 100644
+--- a/array/arr5.c
++++ b/array/arr5.c
+@@ -2,17 +2,33 @@
+ 
+ void main()
+ {
+-	int a[6]={10,30,25,45,70};
+-	int i=0;
+-	while(i<6)
+-		{
+-			printf("%d\n",a[i]);
+-			i++;
+-		}
+-	while(i>=0)
+-		{
+-			printf("%d\n",a[i]);
+-			i--;
+-		}
+-	printf("%d\n",a[i]);
++	int a[5]={10,30,25,45,70};
++	int i=0,temp;
++
++	printf("Array elements are :\n");
++
++	while(i<5)
++	{
++		printf("%d\n",a[i]);
++		i++;
++	}
++
++	i = 0;
++	while (i < 3)
++	{
++		temp    =   a[i];
++		a[i]    =   a[4-i];
++		a[4-i]  =   temp;
++
++		i++;
++	}	
++
++	printf("Array after reverse:\n");
++
++	i = 0;
++	while (i < 5)
++	{
++		printf("%d\n", a[i]);
++		i++;
++	}
+ }
+diff --git a/array/arr6.c b/array/arr6.c
+index 1cf875d..9fd1817 100644
+--- a/array/arr6.c
++++ b/array/arr6.c
+@@ -6,12 +6,12 @@ void main()
+ 	int Even=0;
+ 	int i=0;
+ 	while(i<10)
+-		{
+-			if(a[i]%2==0)
+-			{	
+-				Even++;
+-			}
+-			i++;
++	{
++		if(a[i]%2==0)
++		{	
++			Even++;
+ 		}
++		i++;
++	}
+ 	printf("Even elements in array=%d\n",Even);
+ }
+diff --git a/array/arr7.c b/array/arr7.c
+index ab92b35..e96bee7 100644
+--- a/array/arr7.c
++++ b/array/arr7.c
+@@ -6,12 +6,12 @@ void main()
+ 	int sum =0;
+ 	int i=0;
+ 	while(i<10)
+-		{
+-			if(a[i]%2==0)
+-			{	
+-				sum=sum+a[i];
+-			}
+-			i++;
++	{
++		if(a[i]%2==0)
++		{	
++			sum=sum+a[i];
+ 		}
++		i++;
++	}
+ 	printf("Sum of Even elements in array=%d\n",sum);
+ }
+diff --git a/array/arr8.c b/array/arr8.c
+index df55f7b..65fdc8b 100644
+--- a/array/arr8.c
++++ b/array/arr8.c
+@@ -2,25 +2,38 @@
+ 
+ void main()
+ {
+-	int a[6]={10,30,25,45,70};
+-	int b[6]={10,20,40,30,45};
+-	int c[12];
++	int a[5]={10,30,25,45,70};
++	int b[5]={10,20,40,30,45};
++	int c[10];
+ 	int i=0;
+-	while(i<6)
+-		{
+-			printf("%d\n",a[i]);
+-			i++;
+-		}
+-	while(i<6)
+-		{
+-			printf("%d\n",b[i]);
+-			i++;
+-		}
+-	if(a[6]==b[6])
+-		{
+-			c[i]=b[i];
+-			i++;
+-		}
+-	printf("%d\n",c[i]);
+ 
++	while(i<5)
++	{
++		printf("%d\n",a[i]);
++		i++;
++	}
++
++	i = 0;
++	while(i<5)
++	{
++		printf("%d\n",b[i]);
++		i++;
++	}
++
++	i = 0;
++	while (i < 5)
++	{
++		c[i]   =   a[i];
++		c[i+5] =   b[i];
++		i++;
++	}
++
++	printf("Array elements in c are :\n");
++
++	i = 0;
++	while (i < 10)
++	{
++		printf("%d\n", c[i]);
++		i++;
++	}
+ }
+diff --git a/array/test.c b/array/test.c
+new file mode 100644
+index 0000000..775f189
+--- /dev/null
++++ b/array/test.c
+@@ -0,0 +1,31 @@
++
++#include <stdio.h>
++
++void main()
++{
++	int a[5];
++	int temp,i;
++
++	printf("Enter array elements : ");
++	
++	i = 0;
++	while (i < 5)
++	{
++		scanf("%d", &a[i]);
++		i++;
++	}
++
++	printf("Enter element to search : ");
++	scanf("%d", &temp);
++
++	i = 0;
++	while (i < 5)
++	{
++		if (a[i] == temp)
++		{
++			printf("Element %d found at index : %d\n", a[i], i);
++		}
++
++		i++;
++	}
++}
+-- 
+2.25.1
+
