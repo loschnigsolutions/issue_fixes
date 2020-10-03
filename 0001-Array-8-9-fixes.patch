@@ -1,0 +1,68 @@
+From 8a5d0287baaa2b76ad4265bdb594a4c469053960 Mon Sep 17 00:00:00 2001
+From: Moses <loschnigsolutions@gmail.com>
+Date: Sat, 3 Oct 2020 14:31:11 +0530
+Subject: [PATCH] Array 8 & 9 fixes
+
+
+diff --git a/Arrays/ar8.c b/Arrays/ar8.c
+index 6cb5344..07f2346 100644
+--- a/Arrays/ar8.c
++++ b/Arrays/ar8.c
+@@ -6,14 +6,15 @@ void main()
+ 	int b[5]={25,30,50,60,90};
+ 	int j=0,temp;
+ 	int i = 0;
+-	while(i < 0)
++
++	while(i < 5)
+ 	{
+ 		j=0;
+ 		while(j < 5)
+ 		{	
+ 			if(a[i]==b[j])
+ 			{
+-				printf("Element %d is common:\n",b[i]);
++				printf("Element %d is common with index a[%d] and b[%d]\n",b[i], i,j);
+ 			}
+ 
+ 			j++;
+diff --git a/Arrays/ar9.c b/Arrays/ar9.c
+index d758ed4..68531ee 100644
+--- a/Arrays/ar9.c
++++ b/Arrays/ar9.c
+@@ -1,17 +1,28 @@
+-#include<stdio.h>
++
++#include <stdio.h>
+ 
+ void main()
+ {
+-	int a[5]={5,4,3,2,1};
++	int a[5];
+ 	int i=0,j=0;
+ 	int temp;
+ 
+-	while(i < 4)
++	printf("Enter Array elements : \n");
++
++	i = 0;
++	while (i < 5)
++	{
++		scanf("%d", &a[i]);
++		i++;
++	}
++
++	i = 0;
++	while(i < 5)
+ 	{
+ 		j=i+1;
+ 		while(j < 5)
+ 		{
+-		 	if(a[i] > a[j]);
++		 	if(a[i] > a[j])
+ 			{
+ 				temp = a[j];
+ 				a[j] = a[i];
+-- 
+2.25.1
+
